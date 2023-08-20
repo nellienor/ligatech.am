@@ -1,0 +1,105 @@
+@import 'config';
+#landing2{
+    background-color: rgba($color: $blue, $alpha: 0.055);
+}
+#landing1,#landing2{
+    padding: 20px;
+    @include gridCenter;
+    color: black;
+    #about-us-partners{
+        margin-top: 60px;
+        #about-us-partners-info{
+            padding: 20px;
+            @include gridCenter;
+            gap: 30px;
+        }
+    }
+    #about-us-customers{
+        @include gridCenter;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+        padding: 10px;
+        img{ 
+            width: 100%;
+        }
+        p{
+            width: 80%;
+        }
+    }
+
+    .partners-customers{
+        margin-top: 50px;
+        padding-top: 30px;
+        .media-scroller{
+            display: grid;
+              grid-auto-flow: column;
+              grid-auto-columns: 25%;
+              overflow-x: auto;
+              overscroll-behavior: contain ;
+              margin-left: 30px;
+              .item {
+                  @include gridCenter;
+                img{
+                    width: 45%;
+                    transform: scale(.9);
+                    @include transition-ease;
+                    &:hover{
+                        filter: brightness(120%);
+                        transform: scale(1.2);
+                    }
+                }
+              }
+              
+            &::-webkit-scrollbar{
+                height: 10px;
+            }
+            &::-webkit-scrollbar-track{
+                background:rgba($color: $blue, $alpha: .1);
+                border-radius: 100vw;
+                margin-block: 50%;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: rgba($color: $blue, $alpha: .7);
+                border-radius: 100vw;
+            }
+        }
+        .snaps-inline{
+            scroll-snap-type: inline mandatory;
+        }
+        .snaps-inline > *{
+            scroll-snap-align: start;
+        }
+    
+    }
+
+}
+#landing3-products{
+    h2,p{
+        text-align: center;
+    }
+    #landing_products{
+        @include gridCenter;
+        grid-template-columns: repeat(3,1fr);
+        padding: 30px;
+        .landing_product{
+            width: 40vh;
+            height: 40vh;
+            border-radius: 10%;
+            background: rgba(246, 250, 251, 0.19);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3.2px);
+            -webkit-backdrop-filter: blur(3.2px);
+            @include gridCenter;
+            img{
+                width: 20vh;
+            }
+        }
+    }
+}
+
+#picture-to-be{
+    width: 50vh;
+    height: 50vh;
+    background-color: rgba($color: $orange, $alpha: .7);
+    @include gridCenter;
+}

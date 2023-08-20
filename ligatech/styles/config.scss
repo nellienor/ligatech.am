@@ -1,0 +1,62 @@
+$text-color:#06232B;
+$white:#F6FAFB;
+$red:#E53400;
+$orange:#E7471D;
+$blue:#12819F;
+$gradient: linear-gradient(270deg, rgba(18,129,159,1) 0%, rgba(18,129,159,0.2) 100%);
+$gradient2: linear-gradient(270deg, rgba(18,129,159,0.2) 0%, rgba(18,129,159,0.2) 100%);
+$menu-text: 24px;
+$title-size1:150px;
+$title-size2:64px;
+$title-size3:32px;
+$btn-text: 20px;
+$box-shadow:rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+$box-shadow2:rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+$text-shadow: 0px 3px 1px rgba(128, 128, 128, 0.11);
+
+
+$desktop-width:1024px;
+$tablet-width:768px;
+$mobile-width:480px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Garamond, serif;
+}
+
+@mixin text-config(){
+    text-indent: 15px;
+    font-weight: normal;
+    line-height: 30px;
+}
+@mixin flexMenu(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+@mixin flexCenter(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin gridCenter(){
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+@mixin tablet{
+    @media (min-width:#{$tablet-width}) and (max-width:#{desktop-width - 1px}){
+        @content;
+    }
+}
+@mixin mobile{
+    @media (min-width:$mobile-width) and (max-width:$tablet-width - 1px){
+        @content;
+    }
+}
+@mixin transition-ease {
+    transition: all .8s ease-in-out;
+}

@@ -1,0 +1,89 @@
+@import 'config';
+
+
+@include mobile{
+    .head{
+        height: 90vh;
+        &::after{
+            height: 90vh;
+            z-index: -2;
+        }
+    }
+    .head-info{
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        h1{
+            font-size: 100px;
+            width: 150%;
+        }
+        p{
+            width: 150%;
+        }
+    }
+    
+    .head-menu{
+        visibility: hidden;
+        &.open{
+            background: brown;
+            visibility: visible;
+            width: 100%;
+            border-radius: 0 0 75px 75px;
+            flex-direction: column;
+            transition: .3s ease-in-out;
+        }
+        .menu-panel{
+            flex-direction: column;
+        }
+
+    }
+    .menu-btn{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 20;
+        height: 20px;
+        width: 28px;
+        cursor: pointer;
+        @include transition-ease;
+        .menu-btn__burger{
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 28px;
+            height: 3px;
+            background:  rgba(18,129,159,1);
+            @include transition-ease;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -8px;
+            width: 20px;
+            height: 3px;
+            background:  rgba(18,129,159,1);
+            @include transition-ease;
+            }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 8px;
+            width: 28px;
+            height: 3px;
+            background:  rgba(18,129,159,1);
+            @include transition-ease;
+            }
+       
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+        &::before{
+            transform: rotate(45deg) translate(5px,8px);
+            width: 28px;
+        }
+        &::after{
+            transform: rotate(-45deg) translate(3px,-7px);
+        }
+        }
+        }
+    }
+}

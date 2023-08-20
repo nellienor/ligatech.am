@@ -1,0 +1,31 @@
+@import 'config';
+
+footer{
+    margin-top: 30px;
+    background: $blue;
+    padding: 30px;
+    @include flexMenu();
+    .foot-info{
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        gap: 5px;
+        div{
+            @include gridCenter;
+            grid-template-columns: repeat(2,1fr);
+            img{
+                width: 5vh;
+            }
+        }
+        a{
+            color: $white;
+        }
+        #social-icons{
+            display: flex;
+            gap: 20px;
+            img{
+                width: 3vh;
+            }
+        }
+    }
+}

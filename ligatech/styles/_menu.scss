@@ -1,0 +1,24 @@
+@import 'config';
+.head{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    .head-menu{
+        //background: $gradient;
+        @include flexMenu;
+        padding: 5px;
+        background: rgba(246, 250, 251, 0.19);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+         backdrop-filter: blur(3.2px);
+        -webkit-backdrop-filter: blur(3.2px);
+
+        #menu_lang_icon,.menu-panel{
+            @include flexMenu();
+            font-size: $menu-text;
+        }
+        #logo img{
+            width: 30%;
+            }
+    }
+}
+
